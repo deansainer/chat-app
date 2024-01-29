@@ -1,5 +1,100 @@
 .App{
     display: flex;
     justify-content: center;
-    text-align: center;
+}
+
+.room-chat{
+    width: 800px;
+    height: 700;
+    border-radius: 20px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.chat-header{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    
+}
+
+.chat-footer{
+    height: 50px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.chat-body{
+    height: 580px;
+}
+
+.chat-footer input{
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 25px;
+}
+
+.chat-footer button{
+    height: 27px;
+    width: 60px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    background-color: white;
+
+}
+
+.chat-footer button:hover{
+    background-color: black;
+    color: white;
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: auto;
+}
+
+.message-content {
+    border: 1px solid rgb(128, 128, 128);
+    margin-top: 3px;
+    height: 20px;
+    border-radius: 10px;
+    width: max-content;
+    padding: 8px;
+}
+
+.message-meta {
+    font-size: 12px;
+}
+
+
+#you .message-content {
+    background-color: rgb(152, 168, 255);
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+#other .message-content {
+    background-color: rgb(252, 151, 151);
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+#you .message-meta {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+#other .message-meta {
+    align-self: flex-start;
+    margin-left: 10px;
 }
