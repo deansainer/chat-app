@@ -7,6 +7,8 @@ const socket = io.connect("http://localhost:3001"); // socket server
 
 
 function App() {
+  const [errorMessage, setErrorMessage] = useState('')
+  
   const [username, setUsername] = useState('')
   const [room, setRoom] = useState('')
   const [showChat, setShowChat] = useState(false)
@@ -17,7 +19,7 @@ function App() {
       socket.emit('join_room', room)  // receiving room id to backend
       setShowChat(true)
     } else {
-      console.log('All the fields must be filled');
+      setErrorMessage('All the fields must be filled')
     }
   }
 
@@ -27,12 +29,14 @@ function App() {
       <div>
         <Chat socket={socket} username={username} room={room}/>
       </div>) : (
-      <div>
+      <div className="join-chat-window">
       <h2>Join a chat</h2>
-        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="John.."/>
-        <input value={room} onChange={(e) => setRoom(e.target.value)} type="text" placeholder="Room ID..."/>
+        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Enter your name.."/>
+        <input value={room} onChange={(e) => setRoom(e.target.value)} type="text" onKeyPress={(e) => e.key==='Enter' && joinRoom()} placeholder="Enter room ID..."/>
         <button onClick={joinRoom}>Join</button>
-      </div>)
+        <p className="error_messsage">{errorMessage}</p>
+      </div>
+      )
       }
     </div>
   );

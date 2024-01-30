@@ -27,7 +27,6 @@ const Chat = ({socket, username, room}) => {
 
     return (
         <div>
-            {username}
             <div className='room-chat'>
                 <div className='chat-header'>
                     <span>Room Chat</span>
@@ -47,7 +46,7 @@ const Chat = ({socket, username, room}) => {
                 </ScrollToBottom>
 
                 <div className='chat-footer'>
-                    <input onKeyPress={(e) => {e.key === 'Enter' && sendMessage()}} value={message} onChange={(e) => setMessage(e.target.value)} type='text' placeholder='  Hey..'/>
+                    <input onKeyPress={(e) => {e.key === 'Enter' && sendMessage()}} value={message} onChange={(e) => setMessage(e.target.value)} type='text' placeholder='  Hey..' maxLength={'80'}/>
                     <button onClick={sendMessage}>Send</button>
                 </div>
             </div>
