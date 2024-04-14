@@ -79,25 +79,29 @@
 
 
 #you .message-content {
-    background-color: rgb(152, 168, 255);
+    background-color: rgb(19, 54, 255);
+    color: white;
     align-self: flex-end;
     margin-right: 10px;
 }
 
 #other .message-content {
-    background-color: rgb(153, 204, 157);
+    background-color: rgb(42, 172, 53);
+    color: white;
     align-self: flex-start;
     margin-left: 10px;
 }
 
 #you .message-meta {
     align-self: flex-end;
-    margin-right: 10px;
+    margin-right: 13px;
+    margin-top: 1px;
 }
 
 #other .message-meta {
     align-self: flex-start;
-    margin-left: 10px;
+    margin-left: 13px;
+    margin-top: 1px;
 }
 
 .join-chat-window{
